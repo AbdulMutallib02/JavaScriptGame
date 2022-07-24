@@ -29,7 +29,7 @@ const scrambleWords = (arr) =>{
     return arr;
 }
 
-myFunction = () => {
+btn.addEventListener('click',myFunction = () => {
     if(!play){
         play = true;
         btn.innerHTML = "Guess";
@@ -37,18 +37,21 @@ myFunction = () => {
        newWords = createNewWords();
        randWords = scrambleWords(newWords.split("")).join("");
     //    console.log(randWords.join(""));
-       msg.innerHTML = randWords;
+       msg.innerHTML =`Guess the word: ${randWords}`;
     }else{
         let tempWord = guess.value;
         if (tempWord === newWords){
-            console.log("correct");
+            // console.log("correct");
             play = false;
             msg.innerHTML = `awesome its correct. it is ${newWords}`;
             btn.innerHTML = "Start Again";
+            guess.classList.toggle('hidden');
+            guess.value = "";
         }
         else{
-            console.log("incorrect");
-            msg.innerHTML = `Sorry try again ${randWords}`
+            // console.log("incorrect");
+            msg.innerHTML = `Sorry try again ${randWords}`;
+            guess.value = "";
         }
     }
-}
+})

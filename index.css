@@ -7,7 +7,7 @@
 header{
     line-height: 10vh;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: #20bf6b;
 }
 
 h1{
@@ -21,7 +21,7 @@ h1{
                  0 2px 0 #efefef,
                  0 3px 0 #efefef,
                  0 4px 0 #efefef,
-                 0 30px 5px rgba(0, 0, 0, .1),
+                 0 30px 5px rgba(0, 0, 0, .1);
 }
 
 section{
@@ -29,14 +29,14 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
+    background-color: #7bed9f;
 }
 
 .gameArea{
     width: 50%;
     height: 400px;
     padding: 20px 0;
-    background-color: tomato;
+    background-color: #2ed573;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,12 +52,12 @@ h3{
 
 input{
     width: 40%;
-    padding: 50px 0;
+    padding: 15px 0;
     text-align: center;
     border-radius: 25px;
     outline: none;
     border: none;
-    background-color: white;
+    background-color: #dff9fb;
     color: black;
     margin: 2rem 0;
     font-size: 1.1rem;
@@ -67,9 +67,9 @@ button{
     font-size: 1rem;
     cursor: pointer;
     outline: none;
-    border: goldenrod;
+    border: #2f3542;
     margin-top: 10px;
-    color: thistle;
+    color: #eb4d4b;
 }
 
 button.btn{
