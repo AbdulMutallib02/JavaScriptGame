@@ -1,6 +1,8 @@
 const msg =document.querySelector('.msg');
 const guess = document.querySelector('input');
 const btn = document.querySelector('.btn');
+const gameArea = document.querySelector('.gameArea');
+const validationField = document.querySelector('.validationField');
 let play =false;
 let newWords = "";
 let randWords = "";
@@ -29,29 +31,99 @@ const scrambleWords = (arr) =>{
     return arr;
 }
 
+function changeBackground(color) {
+    document.getElementById("gameArea").style.backgroundColor = color;
+  }
+
+  
+document.getElementById("myInput").addEventListener('keypress', updateValue);
+
+function updateValue(e) {
+
+    const result=document.getElementById('error').className
+
+    if(result== "show")
+    {
+        document.getElementById('error').className = "hidden";
+    }
+
+}
+
 btn.addEventListener('click',myFunction = () => {
+
+
+
+
     if(!play){
         play = true;
         btn.innerHTML = "Guess";
         guess.classList.toggle('hidden');
        newWords = createNewWords();
        randWords = scrambleWords(newWords.split("")).join("");
+       if(guess.value == "")
+       {
+    changeBackground("#2ed573")
+       }
+
+ 
+
+
     //    console.log(randWords.join(""));
        msg.innerHTML =`Guess the word: ${randWords}`;
     }else{
         let tempWord = guess.value;
-        if (tempWord === newWords){
-            // console.log("correct");
-            play = false;
-            msg.innerHTML = `awesome its correct. it is ${newWords}`;
-            btn.innerHTML = "Start Again";
-            guess.classList.toggle('hidden');
-            guess.value = "";
+
+
+        if(tempWord == ""){
+            document.getElementById('error').className = "show";
+            
         }
+
         else{
-            // console.log("incorrect");
-            msg.innerHTML = `Sorry try again ${randWords}`;
-            guess.value = "";
+
+
+         
+
+
+            
+            if (tempWord === newWords){
+                play = false;
+                msg.innerHTML = `awesome its correct. it is ${newWords}`;
+                btn.innerHTML = "Start Again";
+                guess.classList.toggle('hidden');
+                guess.value = "";
+            }
+
+
+            
+                if(tempWord != newWords){
+          
+                play =false
+                changeBackground("red")
+                msg.innerHTML = `Sorry try again ${randWords}`;
+                guess.classList.toggle('hidden');
+                btn.innerHTML = "Sorry try Again";
+                guess.value = "";
+                document.getElementById('error').className = "hidden";
+           
+               
+               
         }
+
+        
+
+
+     
+            }
+
+
+
+        
+        
+       
+      
+     
     }
+
 })
+

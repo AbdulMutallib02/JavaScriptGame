@@ -90,5 +90,20 @@ button.btn:active{
 }
 
 .hidden{
-    display:none;
+    display:none !important;
 }
+
+.validationField{
+    color: white !important;
+    display: none;
+}
+.show{
+    display: block !important;
+    color: white !important;
+}
+
+.hiddenShow{
+    display:none !important;
+}
+
+
